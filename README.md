@@ -5,6 +5,7 @@
 [![Go Version](https://img.shields.io/badge/go-1.22.3+-blue.svg)](https://golang.org/dl/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/suifei/plcopen-go)](https://goreportcard.com/report/github.com/suifei/plcopen-go)
+[![Changelog](https://img.shields.io/badge/changelog-available-green.svg)](CHANGELOG.md)
 
 ## 功能特性
 
@@ -272,6 +273,10 @@ go test ./tests -run TestXMLSchemaValidation -v
 - [PLCopen 官方网站](https://www.plcopen.org/)
 - [IEC 61131-3 标准](https://en.wikipedia.org/wiki/IEC_61131-3)
 - [PLCopen XML 规范](https://www.plcopen.org/technical-activities/xml-exchange-format)
+
+## 版本历史
+
+查看项目的详细更新历史和版本说明，请参考：[CHANGELOG.md](CHANGELOG.md)
 
 ## 致谢
 
