@@ -14,6 +14,7 @@
 - 🛠️ 丰富的工具函数和实用程序
 - 📊 全面的测试覆盖率
 - 🌐 支持多种编程语言（ST、FBD、LD 等）
+- 🔄 支持 XML 和 JSON 双重序列化格式
 
 ## 安装
 
@@ -94,6 +95,57 @@ func main() {
     // 访问项目信息
     fmt.Printf("项目名称: %s\n", project.ContentHeader.Name)
     fmt.Printf("公司名称: %s\n", project.FileHeader.CompanyName)
+}
+```
+
+### JSON 序列化支持
+
+```go
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "time"
+    
+    "github.com/suifei/plcopen-go"
+)
+
+func main() {
+    // 创建项目
+    project := &plcopen.Project{
+        FileHeader: &plcopen.ProjectFileHeader{
+            CompanyName:        "Your Company",
+            ProductName:        "Your Product",
+            ProductVersion:     "1.0",
+            ContentDescription: "PLCopen JSON project",
+            CreationDateTime:   time.Now(),
+        },
+        ContentHeader: &plcopen.ProjectContentHeader{
+            Name:         "MyProject",
+            Version:      "1.0",
+            Organization: "Your Organization",
+            Author:       "Your Name",
+            Language:     "en",
+        },
+    }
+    
+    // 序列化为 JSON
+    jsonData, err := json.MarshalIndent(project, "", "  ")
+    if err != nil {
+        panic(err)
+    }
+    
+    fmt.Println(string(jsonData))
+    
+    // 从 JSON 反序列化
+    var newProject plcopen.Project
+    err = json.Unmarshal(jsonData, &newProject)
+    if err != nil {
+        panic(err)
+    }
+    
+    fmt.Printf("反序列化后的项目名称: %s\n", newProject.ContentHeader.Name)
 }
 ```
 
