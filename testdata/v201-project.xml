@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:project xmlns:p="http://www.plcopen.org/xml/tc6_0201" xmlns:x="http://www.w3.org/1999/xhtml" xmlns:v="urn:example:vendor">
+  <p:fileHeader companyName="Example" productName="Demo" productVersion="1" creationDateTime="2026-11-26T00:00:00Z"/>
+  <p:contentHeader name="V201Example"><p:coordinateInfo><p:fbd><p:scaling x="1" y="1"/></p:fbd><p:ld><p:scaling x="1" y="1"/></p:ld><p:sfc><p:scaling x="1" y="1"/></p:sfc></p:coordinateInfo></p:contentHeader>
+  <p:types>
+    <p:dataTypes><p:dataType name="Count"><p:baseType><p:INT/></p:baseType></p:dataType></p:dataTypes>
+    <p:pous>
+      <p:pou name="Counter" pouType="program"><p:body><p:ST><x:p><![CDATA[count := count + 1;]]></x:p></p:ST></p:body></p:pou>
+      <p:pou name="Process" pouType="program"><p:body><p:FBD/></p:body></p:pou>
+    </p:pous>
+  </p:types>
+  <p:instances><p:configurations><p:configuration name="Default"/></p:configurations></p:instances>
+  <p:addData><p:data name="urn:example:metadata" handleUnknown="preserve"><v:extra v:kind="v:Example">not interpreted</v:extra></p:data></p:addData>
+</p:project>
